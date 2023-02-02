@@ -28,7 +28,6 @@ mx.verbose = True
 for state in range(nstates):
     print(f'state {state}')
     
-    #data = pd.read_csv(f'output_{state}.out', sep=" ")  
     data = pd.read_csv(f'State-{state}/{state}_output_{state}.txt', sep=" ")  
     
     for i in range(nstates):
