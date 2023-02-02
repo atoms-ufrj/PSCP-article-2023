@@ -1,0 +1,49 @@
+
+variable        NAME index ar.200
+log             ${NAME}.log
+variable        infile index box.lmp
+variable        mytemp index 200.0
+variable        pressure index 1.0
+variable        seed index 242321
+variable	 dt index 1.0
+
+units           real
+special_bonds   lj 0.0 0.0 0.5 coul 0.0 0.0 0.8333
+#neighbor        2.0 bin
+#neigh_modify    delay 0 every 1 check yes page 1000000 one 20000 
+atom_style      full
+pair_style	 lj/cut/coul/long 12.0
+
+bond_style	 harmonic
+dihedral_style	 charmm
+angle_style	 harmonic
+improper_style	 cvff
+
+read_data       ${infile}
+
+kspace_style    pppm 1E-4
+kspace_modify   mesh 32 32 32
+pair_modify     mix arithmetic tail yes
+
+timestep        ${dt}
+
+minimize       1.0e-4 1.0e-6 100 1000
+
+velocity        all create ${mytemp} ${seed}
+
+replicate       4 4 4
+
+dump            1 all custom 10000 ${NAME}.lammpstrj id type xu yu zu
+thermo_style    custom step vol temp press ke pe ebond eangle edihed eimp emol evdwl etail ecoul elong enthalpy density cella cellb cellc cellalpha cellbeta cellgamma
+thermo          200
+
+fix             1 all recenter INIT INIT INIT units box
+
+fix             2 all npt temp ${mytemp} ${mytemp} $(100.0*dt) tri ${pressure} ${pressure} $(1000.0*dt)
+
+run             2000000
+
+write_data      data.${NAME}
+
+write_restart   restart.${NAME}
+
