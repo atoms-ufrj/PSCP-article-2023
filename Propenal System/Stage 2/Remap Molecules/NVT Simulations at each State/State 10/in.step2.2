@@ -1,5 +1,5 @@
 
-variable        NAME index ar.2
+variable        NAME index out.2
 log             ${NAME}.log
 variable        mytemp index 200.0
 variable	dt index 1.0
@@ -21,7 +21,7 @@ dihedral_style	 charmm
 angle_style	 harmonic
 improper_style	 cvff
 
-read_restart	restart.ar.1
+read_restart	restart.out.1
 
 kspace_style    pppm 1E-4
 kspace_modify   mesh 32 32 32

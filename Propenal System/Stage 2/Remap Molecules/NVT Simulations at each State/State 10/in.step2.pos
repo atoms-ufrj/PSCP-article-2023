@@ -53,7 +53,7 @@ fix            2 mobile adapt 1 pair lj/cut epsilon 1*6 1*6 v_scale_lj scale yes
 
 fix            3 mobile adapt 1 pair coul/long scale 1*6 1*6 v_scale_coul kspace v_scale_coul scale yes
 
-change_box_mol  all x final 0.0 ${xv} y final 0.0 ${yv} z final 0.0 ${zv} xy final ${xyv} xz final ${xzv} yz final ${yzv} remap units box
+change_box_mol  all x final 0.0 ${a} y final 0.0 ${b} z final 0.0 ${c} xy final ${xyv} xz final ${xzv} yz final ${yzv} remap units box
 
 thermo_style    custom step vol temp press ke pe enthalpy emol evdwl etail ecoul elong
 thermo          1
