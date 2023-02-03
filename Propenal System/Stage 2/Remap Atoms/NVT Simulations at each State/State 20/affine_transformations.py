@@ -15,7 +15,7 @@ for j in range(5000):
     for i in range(21): 
 
         template ='''
-variable        NAME index ar
+variable        NAME index out
 log             ${NAME}.log
 
 variable	 a equal $variavel1
@@ -44,7 +44,7 @@ dihedral_style	 charmm
 angle_style	 harmonic
 improper_style	 cvff
 
-read_restart    restart.ar.2.$variavel7
+read_restart    restart.out.2.$variavel7
 ''' 
         template_mod = template*1
         template_mod = template_mod.replace('$variavel1',f'{ai[i]}')
