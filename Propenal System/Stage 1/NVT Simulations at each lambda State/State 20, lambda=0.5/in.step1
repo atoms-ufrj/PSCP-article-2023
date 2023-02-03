@@ -1,5 +1,5 @@
 
-variable        NAME index ar
+variable        NAME index out
 log             ${NAME}.log
 variable        mytemp index 200.0
 variable	dt index 1.0
