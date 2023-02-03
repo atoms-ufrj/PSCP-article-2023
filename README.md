@@ -1,4 +1,4 @@
-# PSCP-paper
+# 
 
 This repository contains additional information about the manuscript "Revisiting the Pseudo-supercritical path Method: A Modified Formulation for the Alchemical Calculation of Solid-Liquid Coexistence". 
 
