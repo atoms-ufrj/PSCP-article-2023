@@ -1,2 +1,7 @@
 As an example, we are showing the scripts used in the simulations of some sampled states.
 The other sampled states can be analyzed similarly.
+
+At each state, follow these steps:
+1) run the script "in.step2.1" for system equilibration;
+2) run the "in.step2.1" script to generate trajectory files every 200 fs;
+3) run the "affine_transformations.py" script to perform affine transformations from the trajectory files obtained in the previous step.
