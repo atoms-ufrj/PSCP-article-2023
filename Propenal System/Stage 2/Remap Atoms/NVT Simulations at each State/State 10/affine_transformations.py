@@ -15,7 +15,7 @@ for j in range(5000):
     for i in range(21): 
 
         template ='''
-variable        NAME index ar
+variable        NAME index out
 log             ${NAME}.log
 
 variable	 a equal $variavel1
