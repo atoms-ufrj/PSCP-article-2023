@@ -1,6 +1,6 @@
 # 
 
-This repository contains additional information about the article "Revisiting the Pseudo-supercritical path Method: A Modified Formulation for the Alchemical Calculation of Solid-Liquid Coexistence". 
+This repository contains additional information about the article "Revisiting the Pseudo-supercritical path Method: An Improved Formulation for the Alchemical Calculation of Solid-Liquid Coexistence". 
 
 The melting point calculation of the propenal system is considered for exemplification. It is attached free energy calculation results and some scripts applied in molecular dynamics simulations and data post-processing.
 
