@@ -84,7 +84,7 @@ for state in range(nstates):
     kwargs['h2'] = h2(lbda/lbdc) 
     kwargs['h3'] = h3(lbda) 
  
-    samples.append(mx.sample(data, f'beta*({U})', acfun='U_pot', **kwargs))
+    samples.append(mx.sample(data, f'beta*({U})', acfun='PotEng', **kwargs))
     
     dUv[state] = np.mean(data['dUvdwl'].values)
     dUc[state] = np.mean(data['dUcoulk'].values)
