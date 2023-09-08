@@ -79,13 +79,10 @@ pair_coeff 	5 5 lj/cut 0.015 2.51055 12
 pair_coeff 	5 6 lj/cut 0.015 2.55509 12
 pair_coeff 	6 6 lj/cut 0.015 2.59964 12
 
-
 velocity        all zero linear units box
  
 group   	mobile type <> 1 6
 group   	stat   type <> 7 8
-
-fix            1a all recenter INIT INIT INIT units box
 
 fix            1 mobile nvt temp ${mytemp} ${mytemp} $(100.0*dt) 
 dump           1 all custom 10000 ${NAME}.lammpstrj id type x y z
