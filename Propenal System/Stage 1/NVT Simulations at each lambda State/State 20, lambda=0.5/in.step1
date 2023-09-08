@@ -93,8 +93,6 @@ velocity        all zero linear units box
 group   	mobile type <> 1 6
 group   	stat   type <> 7 8
 
-fix            1a all recenter INIT INIT INIT units box
-
 fix            1 mobile nvt temp ${mytemp} ${mytemp} $(100.0*dt) 
 dump           1 all custom 10000 ${NAME}.lammpstrj id type x y z
 
